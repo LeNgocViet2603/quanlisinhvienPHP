@@ -9,7 +9,7 @@
 - View:	
 	+ Tên thư mục view nên giống với controller nhưng ở dạng số nhiều
 	Vd: UserController -> Folder view là users
-	+ Tên của file view nên giống với tên của method trong file view đó
+	+ Tên của file view nên giống với tên của method trong controller
 	Vd: Method trong controller là index -> tên file view sẽ là index.php
 - Parameter Name:
 	+ controller: Quy định gọi vào controller nào. Phải trùng tên với Controller Name
