@@ -5,7 +5,9 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Đây là trang index</h1>
+            <h1 class="m-0"><?php if(isset($_SESSION['user'])){
+              echo 'xin chào '.substr($_SESSION['user']['username'],0,strpos($_SESSION['user']['username'],'@'));
+            } ?></h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">

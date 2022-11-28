@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!---Coding By CoderGirl | www.codinglabweb.com--->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,7 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Đăng Nhập</title>
   <base href="http://localhost:8080/mvcProject/">
-  <!---Custom CSS File--->
   <link rel="stylesheet" href="public/assets/css/login.css">
 </head>
 <body>
@@ -26,21 +24,7 @@
       </form>
       <div class="signup">
         <span class="signup">Bạn chưa có tài khoản?
-         <label for="check">Đăng kí</label>
-        </span>
-      </div>
-    </div>
-    <div class="registration form">
-      <header>Signup</header>
-      <form action="#">
-        <input type="text" placeholder="Enter your email">
-        <input type="password" placeholder="Create a password">
-        <input type="password" placeholder="Confirm your password">
-        <input type="button" class="button" value="Signup">
-      </form>
-      <div class="signup">
-        <span class="signup">Bạn đã có tài khoản?
-         <label for="check">Đăng nhập</label>
+         <label> <a href="./register">Đăng kí</a> </label>
         </span>
       </div>
     </div>

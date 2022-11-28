@@ -16,15 +16,15 @@
                 $pass = $_POST['password'];
                 $data = ['username'=>$username,'password' => $pass];
                 if($this->userModel->check($data)){
-                    header('Location:http://localhost:8080/mvcProject/student/index');
+                    $_SESSION['user'] = $data;
+                    header('Location:http://localhost:8080/mvcProject/');
                 }
                 else{
                     $err = "Sai tên đăng nhập hoặc mật khẩu!";
                     return $this->view('backend.login',[
                         'message' => $err
                     ]);                
-                }          
-                
+                }           
             }
             
         }

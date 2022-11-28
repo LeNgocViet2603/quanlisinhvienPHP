@@ -17,6 +17,13 @@
             $model = self::MODEL_FOLDER_NAME.'/'.$model.'Model.php';
             return require_once ($model);
         }
+        protected function isLogged(){
+            if(isset($_SESSION['user'])){
+                return true;
+            }else{
+                return false;
+            }
+        }
     }
     
 ?>

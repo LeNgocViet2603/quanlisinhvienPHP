@@ -13,7 +13,7 @@
           <img src="public/assets/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Mít tờ việt</a>
+          <a href="#" class="d-block"><?php if(isset($_SESSION['user'])) echo substr($_SESSION['user']['username'],0,strpos($_SESSION['user']['username'],'@')) ?></a>
         </div>
       </div>
 

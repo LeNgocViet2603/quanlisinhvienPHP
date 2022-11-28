@@ -20,18 +20,23 @@
             ]);
         }
         public function index(){
-            $listSt = $this->studentModel->getList();
-            $listDeleted = $this->studentModel->getStudentDeleted();
-            $all = count($listSt);
-            $deleted = count($this->studentModel->getStudentDeleted());
-            return $this->view('backend.layout.master_layout',[
-                'page' => 'index2',
-                'controller' => 'student',
-                'listStudent' => $listSt,
-                'listDeleted' => $listDeleted,
-                'all' => $all,
-                'deleted' => $deleted                 
-            ]);
+            if($this->isLogged()){
+                $listSt = $this->studentModel->getList();
+                $listDeleted = $this->studentModel->getStudentDeleted();
+                $all = count($listSt);
+                $deleted = count($this->studentModel->getStudentDeleted());
+                return $this->view('backend.layout.master_layout',[
+                    'page' => 'index2',
+                    'controller' => 'student',
+                    'listStudent' => $listSt,
+                    'listDeleted' => $listDeleted,
+                    'all' => $all,
+                    'deleted' => $deleted                 
+                ]);
+            }else{
+                header('location:http://localhost:8080/mvcProject/login');
+            }
+
         }
         public function showAddStudent(){
             $allClass = $this->modelClass->getAllClass();

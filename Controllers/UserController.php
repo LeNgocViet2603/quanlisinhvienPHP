@@ -28,16 +28,16 @@
             ];
             $this->userModel->create($data);
         }
-        public function saveChange(){
-            // trong project thực tế $data và $id sẽ là dữ liệu nhận được từ người dùng gửi đến thông qua form
-            // sử dụng các phương thức get hoặc post
-            $data = [
-                "key1" => "test1",
-                "key2" => "test2"
-            ];
-            $id = $_GET['id'];
-            $this->userModel->save($id,$data);
-        }     
+        // public function saveChange(){
+        //     // trong project thực tế $data và $id sẽ là dữ liệu nhận được từ người dùng gửi đến thông qua form
+        //     // sử dụng các phương thức get hoặc post
+        //     $data = [
+        //         "key1" => "test1",
+        //         "key2" => "test2"
+        //     ];
+        //     $id = $_GET['id'];
+        //     $this->userModel->save($id,$data);
+        // }     
         public function delete(){
             $id = $_GET['id'];
             $this->userModel->destroy($id);
