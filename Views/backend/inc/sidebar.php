@@ -20,6 +20,31 @@
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <li class="nav-item">            
+            <a href="#" class="nav-link">
+            <i class=" nav-icon far fa-user-circle"></i>
+              <p>
+                Tài khoản của tôi
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="user/profile" class="nav-link">
+                  <i class=" nav-icon fas fa-user-alt"></i>
+                  <p>Profile</p>
+                </a>
+              </li>
+              <li class="nav-item">            
+                <a href="./user/logout" class="nav-link">
+                  <i class="nav-icon fas fa-sign-out-alt"></i>
+                  <p>
+                    Đăng xuất
+                  </p>
+                </a>            
+              </li>
+            </ul>
+          </li>
           <li class="nav-item">            
             <a href="#" class="nav-link" id="test">
               <i class="nav-icon fas fa-th"></i>
@@ -51,14 +76,15 @@
               </p>
             </a>
           </li>
-          <li class="nav-item">            
-            <a href="#" class="nav-link" id="test">
+
+          <!-- <li class="nav-item">            
+            <a href="./user/logout" class="nav-link" id="test">
               <i class="nav-icon fas fa-sign-out-alt"></i>
               <p>
                 Đăng xuất
               </p>
             </a>            
-          </li>
+          </li> -->
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

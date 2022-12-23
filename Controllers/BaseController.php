@@ -24,6 +24,37 @@
                 return false;
             }
         }
+        protected function uploadFile(){
+            if($_SERVER['REQUEST_METHOD']=='POST'){
+                $userUpload = substr($_SESSION['user']['inforUser']['user_name'],0,strpos($_SESSION['user']['inforUser']['user_name'],'@'));
+                $allow_ext = ['png','jpg','jpeg'];
+                // giới hạn kích thước file
+                $max_size = 10;
+                $file = $_FILES['filename'];
+                // đổi tên trước khi upload
+                $file_name = $file['name'];
+                $file_name = explode('.',$file_name);
+                // lấy phần mở rộng của file -> dùng hàm end lấy phần tử cuối cùng trong array file_name
+                $ext = end($file_name);
+                // gán tên mới cho file
+                $new_file = $userUpload.'_'.md5(uniqid()).'.'.$ext;                
+                if(in_array($ext,$allow_ext)){
+                    // convert byte to MB
+                    //$size = $file['size']/1024/1024;
+                    // if($size > $max_size){
+                    //     echo 'lỗi';
+                    // }else{
+                        #code
+                    //}              
+                    $upload = move_uploaded_file($file['tmp_name'],'Uploads\avt\\'.$new_file);
+                    if($upload){      
+                        $imgPath = $new_file;        
+                        return $imgPath;
+                    }
+                }
+            }
+            return false;
+        }        
     }
     
 ?>

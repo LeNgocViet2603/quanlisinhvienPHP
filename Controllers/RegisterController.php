@@ -2,10 +2,13 @@
     class RegisterController extends BaseController
     {
         private $userModel;
+        private $userDetailModel;
         public function __construct()
         {
             $this->loadModel('user');
             $this->userModel = new UserModel(); 
+            $this->loadModel('Userdetail');
+            $this->userDetailModel = new UserdetailModel();
         }
         public function index(){
             return $this->view('backend.register');
@@ -32,9 +35,17 @@
                     // tạo mảng chứa thông tin cho việc đăng kí (username,password)
                     $infor = ['username' => $user_name,'password'=>$password];
                     // gọi đến method register trong class UserModel truyền tham số là 
-                    // 1 mảng chứa thông tin phục vụ cho việc đăng kí
+                    // 1 mảng chứa thông tin ở trên phục vụ cho việc đăng kí
                     if($this->userModel->register($infor)){
-                        header('location:http://localhost:8080/mvcProject/login');                    
+                        $infor = $this->userModel->getInfor($infor);
+                        // set tên hiển thị,email mặc định khi người dùng đki mới acount
+                        $user_id = $infor['user_id'];
+                        $displayNameDefault = substr($infor['user_name'],0,strpos($infor['user_name'],'@'));
+                        $emailDefault = $infor['user_name'];
+                        if($this->userDetailModel->addDetail($user_id,$displayNameDefault,$emailDefault)){
+                            header('location:http://localhost:8080/mvcProject/login');  
+                        }
+                                          
                     }else{
                         echo 'có lỗi';
                     } 

@@ -5,6 +5,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
+            <?php var_dump($_SESSION['user']['inforUser']); ?>
             <h1 class="m-0"><?php if(isset($_SESSION['user'])){
               echo 'xin chào '.substr($_SESSION['user']['username'],0,strpos($_SESSION['user']['username'],'@'));
             } ?></h1>

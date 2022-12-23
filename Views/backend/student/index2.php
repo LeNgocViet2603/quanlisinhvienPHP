@@ -35,7 +35,7 @@
             <div class="card-body">
                 <div class="tab-content" id="custom-tabs-four-tabContent">
                     <div class="tab-pane fade show active" id="custom-tabs-four-home" role="tabpanel" aria-labelledby="custom-tabs-four-home-tab">
-                        <table id="table_all_student"  class="table table-bordered table-striped">
+                        <table id="table_all_student" class="table table-bordered table-striped">
                             <thead>
                             <tr>
                                 <th>Họ Tên</th>
@@ -103,19 +103,13 @@
                                             <td><?php echo $student['classCode']; ?></td>
                                             <td><?php echo $student['address']; ?></td>
                                             <td>                                          
-                                            <button class="btn btn-warning btn-restore" value="<?php echo $student['st_id']; ?>"><i class="fas fa-trash-restore mr-1"></i>Phục hồi</button>
+                                              <button class="btn btn-warning btn-restore" value="<?php echo $student['st_id']; ?>"><i class="fas fa-trash-restore mr-1"></i>Phục hồi</button>
                                             </td>
                                         </tr>
                                 <?php } ?>
                             </tbody>
                         </table>
-                    </div>
-                    <div class="tab-pane fade" id="custom-tabs-four-messages" role="tabpanel" aria-labelledby="custom-tabs-four-messages-tab">
-                        Morbi turpis dolor, vulputate vitae felis non, tincidunt congue mauris. Phasellus volutpat augue id mi placerat mollis. Vivamus faucibus eu massa eget condimentum. Fusce nec hendrerit sem, ac tristique nulla. Integer vestibulum orci odio. Cras nec augue ipsum. Suspendisse ut velit condimentum, mattis urna a, malesuada nunc. Curabitur eleifend facilisis velit finibus tristique. Nam vulputate, eros non luctus efficitur, ipsum odio volutpat massa, sit amet sollicitudin est libero sed ipsum. Nulla lacinia, ex vitae gravida fermentum, lectus ipsum gravida arcu, id fermentum metus arcu vel metus. Curabitur eget sem eu risus tincidunt eleifend ac ornare magna.
-                    </div>
-                    <div class="tab-pane fade" id="custom-tabs-four-settings" role="tabpanel" aria-labelledby="custom-tabs-four-settings-tab">
-                        Pellentesque vestibulum commodo nibh nec blandit. Maecenas neque magna, iaculis tempus turpis ac, ornare sodales tellus. Mauris eget blandit dolor. Quisque tincidunt venenatis vulputate. Morbi euismod molestie tristique. Vestibulum consectetur dolor a vestibulum pharetra. Donec interdum placerat urna nec pharetra. Etiam eget dapibus orci, eget aliquet urna. Nunc at consequat diam. Nunc et felis ut nisl commodo dignissim. In hac habitasse platea dictumst. Praesent imperdiet accumsan ex sit amet facilisis.
-                    </div>
+                    </div>                    
                 </div>
             </div>               
             <!-- /.card -->

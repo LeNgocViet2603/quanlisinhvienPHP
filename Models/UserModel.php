@@ -37,6 +37,22 @@
                 }
              }             
         }
+        public function getInfor($infor){
+            $sql = "SELECT * FROM ".self::TABLE." WHERE user_name = '{$infor['username']}'";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            $stmt->execute();
+            $result = $stmt->fetch();
+            return $result;
+        }
+        public function findByID($id){
+            $sql = "SELECT * FROM ".self::TABLE." WHERE user_id= ${id} LIMIT 1";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            $stmt->execute();
+            $result = $stmt->fetch();
+            return $result;
+        }
         public function register($infor){
             $hash = password_hash($infor['password'], PASSWORD_DEFAULT);
             $sql = "INSERT INTO ".self::TABLE." ( user_name,password,user_type ) VALUES(

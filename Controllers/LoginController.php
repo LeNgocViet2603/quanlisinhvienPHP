@@ -14,8 +14,11 @@
             if(isset($_POST['btn_login'])){
                 $username = $_POST['user_name'];
                 $pass = $_POST['password'];
+
                 $data = ['username'=>$username,'password' => $pass];
                 if($this->userModel->check($data)){
+                    $inforUser = $this->userModel->getInfor($data);
+                    $data['inforUser'] = $inforUser;
                     $_SESSION['user'] = $data;
                     header('Location:http://localhost:8080/mvcProject/');
                 }
